@@ -1,0 +1,401 @@
+html, body, header, #main {
+	height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+/* header */
+#header-wrap {
+	background: url(../images/background3.jpg) no-repeat center center;
+	background-size: cover; /* 사이즈를 영역 크기에 맞춤 */
+	height: 100%;
+}
+
+h2 {
+	font-family: brandon-grotesque, sans-serif;
+}
+
+/* Navbar icon*/
+.animated-icon {
+	width: 30px;
+	height: 20px;
+	position: relative;
+	margin: 0px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+}
+
+.animated-icon span {
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	border-radius: 9px;
+	background: #e3f2fd;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+
+.animated-icon span:nth-child(1) {
+	top: 0px;
+}
+
+.animated-icon span:nth-child(2), .animated-icon span:nth-child(3) {
+	top: 10px;
+}
+
+.animated-icon span:nth-child(4) {
+	top: 20px;
+}
+
+/* open 클래스가 추가되었을 때 적용됨(css에서는 더 구체적인 것이 우선 적용되므로..) */
+.animated-icon.open span:nth-child(1) {
+	top: 11px;
+	width: 0%;
+	left: 50%;
+}
+
+.animated-icon.open span:nth-child(2) {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.animated-icon.open span:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.animated-icon.open span:nth-child(4) {
+	top: 11px;
+	width: 0%;
+	left: 50%;
+}
+
+/* intro & menu */
+#intro-and-menu {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#division-line {
+	width: 110px;
+	height: 2px;
+	background-color: rgba(255, 255, 255, .7);
+	margin: 10px auto 10px auto;
+}
+
+@media ( min-width : 500px) {
+	#site-name {
+		font-size: 1.2em;
+		/* font-weight: bold; */
+		letter-spacing: 0.1em;
+	}
+	#slogan {
+		font-size: 1em;
+		font-style: italic;
+		letter-spacing: 0.2em;
+		color: rgba(255, 255, 255, .7);
+		margin-bottom: 10px;
+	}
+}
+
+@media ( max-width : 499px) {
+	#site-name {
+		font-size: 1.2em;
+		/* font-weight: bold; */
+		letter-spacing: 0.16em;
+	}
+	#slogan {
+		font-size: 0.8em;
+		font-style: italic;
+		letter-spacing: 0.16em;
+		color: rgba(255, 255, 255, .7);
+	}
+}
+/* customize navbar */
+.navbar {
+	box-shadow: none;
+	width: 100%;
+	z-index: 2;
+	top: 0;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+	font-weight: 400;
+	color: rgba(166, 146, 87, .9);
+	letter-spacing: 0.2em;
+}
+
+.nav-link.active {
+	color: rgba(206, 177, 90, .9) !important;
+}
+
+.nav-link:hover {
+	color: rgba(206, 177, 90, .9) !important;
+}
+
+@media ( min-width : 500px) {
+	.navbar-expand-custom {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+	}
+	.navbar-expand-custom .navbar-nav {
+		flex-direction: row;
+	}
+	.navbar-expand-custom .navbar-nav .nav-link {
+		padding-right: .5rem;
+		padding-left: .5rem;
+	}
+	.navbar-expand-custom .navbar-collapse {
+		display: flex !important;
+	}
+	.navbar-expand-custom .navbar-toggler {
+		display: none;
+	}
+	.navbar-expand-custom .nav-item {
+		margin-right: .5rem;
+		margin-left: .5rem;
+	}
+	.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+		border: 2px solid rgba(166, 146, 87, .9);
+	}
+	.nav-link.active {
+		color: rgba(206, 177, 90, .8) !important;
+		border: 2px solid rgba(206, 177, 90, .9) !important;
+	}
+	.nav-link:hover {
+		color: rgba(206, 177, 90, .8) !important;
+		border: 2px solid rgba(206, 177, 90, .9) !important;
+	}
+}
+
+@media ( max-width : 499px) {
+	.navbar {
+		background: rgba(0, 0, 0, .8);
+		position: fixed;
+	}
+}
+
+/* contact */
+#contact {
+	background: rgba(0, 0, 0);
+}
+#contact .send-btn{
+	border: 2px solid rgba(166, 146, 87, .9);
+	font-weight: 400;
+	color: rgba(166, 146, 87, .9);
+	background: none;
+	letter-spacing: 0.2em;
+	border-radius: 0;
+	font-size: 1em;
+}
+#contact .send-btn:hover {
+	color: rgba(206, 177, 90, .9) !important;
+	border-color: rgba(206, 177, 90, .9) !important;
+}
+
+/* modal */
+.portfolio .portfolio-item {
+	position: relative;
+	display: block;
+	max-width: 25rem;
+	margin-bottom: 15px;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8 {
+	cursor: pointer;
+}
+
+.close-btn{
+	background-color: #3d3d6d;
+}
+.close-btn:hover{
+	color: white;
+}
+.view-btn{
+	background-color: #3d3d6d;
+}
+.view-btn:hover{
+	color: white;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+    width: 60px;
+    height: 50px;
+    top: 350px;
+    background-color: #000000;
+    font-size: 30px;
+    opacity: 0.5;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover{
+	opacity: 0.5;
+}
+.info-box{
+	padding: 35px 35px 5px 25px;
+}
+.title {
+    font-size: 22pt;
+    line-height: 30pt;
+    font-weight: bold;
+}
+.tag {
+    display: block;
+    font-weight: 300;
+    color: #c0c0c0;
+    font-family: 'Raleway-bold';
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    font-size: 12pt;
+    font-weight: bold;
+}
+.portfolio-modal-dismiss{
+	font-size: 30px;
+}
+    
+#carouselExampleControls{
+	border-bottom: 3px solid black;
+}
+.portfolio-modal .portfolio-modal-dialog {
+	min-height: calc(100vh - 2rem);
+	width:700px;
+	/* margin: 1rem calc(1rem - 8px); */
+	position: relative;
+	z-index: 2;
+	-webkit-box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.floating-label-form-group {
+	position: relative;
+	border-bottom: 1px solid #e9ecef;
+}
+
+.floating-label-form-group input, .floating-label-form-group textarea {
+	font-size: 1.5em;
+	position: relative;
+	z-index: 1;
+	padding-right: 0;
+	padding-left: 0;
+	resize: none;
+	border: none;
+	border-radius: 0;
+	background: none;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.floating-label-form-group label {
+	font-size: 0.85em;
+	line-height: 1.764705882em;
+	position: relative;
+	z-index: 0;
+	top: 2em;
+	display: block;
+	margin: 0;
+	-webkit-transition: top 0.3s ease, opacity 0.3s ease;
+	transition: top 0.3s ease, opacity 0.3s ease;
+	vertical-align: middle;
+	vertical-align: baseline;
+	opacity: 0;
+}
+
+.floating-label-form-group
+:not
+ 
+(
+:first-child
+ 
+)
+{
+padding-left
+:
+ 
+14
+px
+;
+
+	
+border-left
+:
+ 
+1
+px
+ 
+solid
+ 
+#e9ecef
+;
+
+
+}
+.floating-label-form-group-with-value label {
+	top: 0;
+	opacity: 1;
+}
+
+.floating-label-form-group-with-focus label {
+	color: #18BC9C;
+}
+
+form .row:first-child .floating-label-form-group {
+	border-top: 1px solid #e9ecef;
+}
+
+.portfolio-modal .portfolio-modal-dialog .close-button {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+}
+
+.portfolio-modal .portfolio-modal-dialog .close-button i {
+	line-height: 38px;
+	color: ;
+}
+
+.portfolio-modal .portfolio-modal-dialog h2 {
+	font-size: 2rem;
+}
+
+@media ( min-width : 768px) {
+	.portfolio-modal .portfolio-modal-dialog {
+		min-height: 100vh;
+		/* padding: 5rem; */
+		margin: 0 auto;
+		/* margin: 3rem calc(3rem - 8px); */
+	}
+	.portfolio-modal .portfolio-modal-dialog h2 {
+		font-size: 3rem;
+	}
+}
+
+/* about */
+.about-cntainer {
+	background-color: #f5f5f5;
+}
+
